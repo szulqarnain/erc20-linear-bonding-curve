@@ -12,3 +12,4 @@ npx hardhat node
 npx hardhat ignition deploy ./ignition/modules/Lock.js
 ```
 # erc20-linear-bonding-curve
+# erc20-linear-bonding-curve
