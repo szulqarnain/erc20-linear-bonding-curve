@@ -1,33 +1,10 @@
-# Smart Contract Boilerplate - Linear Bonding Curve
-
-## Overview
-This is an ERC-20 smart contract implementing a **linear bonding curve pricing model**. The price of tokens increases linearly based on the total supply, ensuring liquidity at all times.
-
-## Features
-- **Linear Bonding Curve Pricing**: The token price follows the formula:
-  
-  \[ P(S) = basePrice + (slope * S) \]
-  
-  Where:
-  - `basePrice`: Initial price of the token
-  - `slope`: Price increase per additional token minted
-  - `S`: Current total supply of tokens
-  
-- **Minting (Buying) Tokens**: Users can buy tokens by sending MATIC.
-- **Burning (Selling) Tokens**: Users can sell tokens back to the reserve and receive MATIC.
-- **Reserve Wallet**: All funds from token sales are stored in a reserve wallet for liquidity.
-- **Reentrancy Protection**: Uses `ReentrancyGuard` from OpenZeppelin to prevent attacks.
-
-## Smart Contract Code
-
-```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
-contract LinearBondingToken is ERC20, ReentrancyGuard {
+contract TeamToken is ERC20, ReentrancyGuard {
     address public reserveWallet;
     uint256 public basePrice; // Initial price (e.g., 0.1 MATIC)
     uint256 public slope; // Price increase per token (e.g., 0.001 MATIC)
@@ -95,24 +72,3 @@ contract LinearBondingToken is ERC20, ReentrancyGuard {
         payable(msg.sender).transfer(totalValue);
     }
 }
-```
-
-## Deployment Guide
-1. **Install Dependencies**:
-   ```sh
-   npm install @openzeppelin/contracts
-   ```
-2. **Compile & Deploy** using Hardhat or Remix.
-3. **Configure Parameters**:
-   - `basePrice`: Set an initial base price (e.g., `0.1 MATIC`).
-   - `slope`: Set how much the price increases per token.
-   - `reserveWallet`: Set the address where funds will be held.
-4. **Use the Contract**:
-   - Call `mint(amount)` to buy tokens.
-   - Call `burn(amount)` to sell tokens.
-
-## Repository Name
-**`erc20-linear-bonding-curve`**
-
-## License
-This project is licensed under the MIT License.

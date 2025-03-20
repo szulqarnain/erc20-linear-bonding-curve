@@ -1,0 +1,16 @@
+{
+  "network": "mainnet",
+  "contracts": {
+    "LinearBondingToken": {
+      "address": "0xYourMainnetContractAddress",
+      "deployedAtBlock": 18765432,
+      "parameters": {
+        "name": "Linear Token",
+        "symbol": "LBT",
+        "reserveWallet": "0xYourReserveWalletAddress",
+        "basePrice": "100000000000000000",
+        "slope": "1000000000000000"
+      }
+    }
+  }
+}

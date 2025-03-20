@@ -1,0 +1,16 @@
+{
+  "network": "goerli",
+  "contracts": {
+    "LinearBondingToken": {
+      "address": "0xYourTestnetContractAddress",
+      "deployedAtBlock": 3543212,
+      "parameters": {
+        "name": "Linear Token",
+        "symbol": "LBT",
+        "reserveWallet": "0xYourReserveWalletAddress",
+        "basePrice": "100000000000000000",
+        "slope": "1000000000000000"
+      }
+    }
+  }
+}
