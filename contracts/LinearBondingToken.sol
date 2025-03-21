@@ -25,6 +25,7 @@ contract TeamToken is ERC20, ReentrancyGuard {
         slope = _slope;
     }
 
+// 
     // Bonding curve price calculation
     function currentPrice() public view returns (uint256) {
         return basePrice + (slope * totalSupply());
